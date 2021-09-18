@@ -15,6 +15,7 @@ void set_riding_song();
 void set_win_song();
 void set_lose_song();
 void play_shoot_sound();
+void play_last_bullet_shoot_sound();
 void play_explosion_sound();
 void play_empty_sound();
 void play_reload_sound();

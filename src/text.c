@@ -78,6 +78,8 @@ const unsigned char round_text[] = "ROUND \0";
 const unsigned char rounds_text[] = "ROUNDS\0";
 const unsigned char enemy_text[] = "ENEMY - \0";
 const unsigned char you_text[] = "YOU - \0";
+const unsigned char you_win_text[] = "YOU WIN!\0";
+const unsigned char you_lose_text[] = "YOU  LOSE!\0";
 
 const unsigned char lives_text[] = "LIVES\0";
 const unsigned char start_text[] = "START\0";
@@ -123,3 +125,4 @@ const unsigned char * credits_texts[] = {
     credits_text_10,
 };
 const unsigned char credits_text[] = "    EL DUELOROSO\nA GAME BY  ADRIAN JG\n\nTHANKS TO\nGBDK-2020 DEVS\nHUGETRACKER DEVS\nHUGEBUILD DEVS\nGAMINGMONSTERS\n\nSPECIAL THANKS TO\nALEX @\n\nAND THANK YOU\nFOR PLAYING!\n\0";
+const unsigned char new_record_text[] = "NEW  RECORD!\n";

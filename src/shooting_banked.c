@@ -154,7 +154,11 @@ void shoot()  {
                 break;            
             }            
         }      
-        play_shoot_sound();   
+        if (ammo == 0) {
+            play_last_bullet_shoot_sound();
+        } else {
+            play_shoot_sound(); 
+        } 
         canShoot = FALSE;     
     } else if (canShoot == TRUE && ammo == 0) {
         play_empty_sound();

@@ -43,6 +43,7 @@ extern BOOLEAN isSurvivalMode;
 extern BOOLEAN loadPrelevelScreen;
 extern BOOLEAN showingHowToPlay;
 extern BOOLEAN showingPressAnyKey;
+extern BOOLEAN newRecord;
 
 extern const level levels[];
 extern const duelLevel duelLevels[];

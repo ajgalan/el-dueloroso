@@ -239,7 +239,7 @@ void print_duel_text() {
 }
 
 void print_duel_score() {
-    for (UINT8 y = 7; y != 12; y++) {
+    for (UINT8 y = 6; y != 13; y++) {
         for (UINT8 x = 0; x != 32; x++) {
             set_bkg_tile_xy(x, y, 0x00);       
         }
@@ -247,23 +247,43 @@ void print_duel_score() {
     UINT8 i = 0;
     while(you_text[i] != '\0') {
         if (you_text[i] > 64 && you_text[i] < 91) {
-            set_bkg_tile_xy(6+i, 8, you_text[i] + 111);                    
+            set_bkg_tile_xy(6+i, 7, you_text[i] + 111);                    
         } else if (you_text[i] == '-') {
-            set_bkg_tile_xy(6+i, 8, 204);  
+            set_bkg_tile_xy(6+i, 7, 204);  
         }
         i++;
     }
-    set_bkg_tile_xy(6+i, 8, 245 + roundsWon); 
+    set_bkg_tile_xy(6+i, 7, 245 + roundsWon); 
 
     i = 0;
     while(enemy_text[i] != '\0') {
         if (enemy_text[i] > 64 && enemy_text[i] < 91) {
-            set_bkg_tile_xy(4+i, 10, enemy_text[i] + 111);                    
+            set_bkg_tile_xy(4+i, 9, enemy_text[i] + 111);                    
         } else if (enemy_text[i] == '-') {
-            set_bkg_tile_xy(4+i, 10, 204);  
+            set_bkg_tile_xy(4+i, 9, 204);  
         }
         i++;
     } 
-    set_bkg_tile_xy(4+i, 10, 245 + roundsLost); 
+    set_bkg_tile_xy(4+i, 9, 245 + roundsLost); 
+    i = 0;
+    if (roundsWon == 3) {
+        while(you_win_text[i] != '\0') {
+            if (you_win_text[i] > 64 && you_win_text[i] < 91) {
+                set_bkg_tile_xy(6+i, 11, you_win_text[i] + 111);                    
+            } else if (you_win_text[i] == '!') {
+                set_bkg_tile_xy(6+i, 11, 205);  
+            }
+            i++;
+        } 
+    } else if (roundsLost == 3) {
+        while(you_lose_text[i] != '\0') {
+            if (you_lose_text[i] > 64 && you_lose_text[i] < 91) {
+                set_bkg_tile_xy(5+i, 11, you_lose_text[i] + 111);                    
+            } else if (you_lose_text[i] == '!') {
+                set_bkg_tile_xy(5+i, 11, 205);  
+            }
+            i++;
+        } 
+    }
 }
 

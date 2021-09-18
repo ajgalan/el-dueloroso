@@ -32,6 +32,7 @@ BOOLEAN isSurvivalMode;
 BOOLEAN loadPrelevelScreen;
 BOOLEAN showingHowToPlay;
 BOOLEAN showingPressAnyKey;
+BOOLEAN newRecord;
 
 
 const level levels[] = {      
@@ -106,8 +107,7 @@ void load_level() {
                 default:
                     break;
             }
-        } else {
-            update_score();            
+        } else {    
             load_credits();
         }
     }   
@@ -173,7 +173,10 @@ void game_over_loop() {
     if (textScreenTimer != 0 && decimalTimer == 0) {
         textScreenTimer--;
         if (textScreenTimer == 1) {
-            print_text_win(1, 15, press_any_button_text);             
+            print_text_win(1, 16, press_any_button_text);
+            if (newRecord == TRUE) {
+                print_text_win(4, 13, new_record_text); 
+            }             
         }       
     } else if (joypad() && textScreenTimer == 0) {
         reset_values();
@@ -217,7 +220,7 @@ void load_game_over() {
             set_win_tile_xy(14 - x, 12, 245 + digit);                 
         } 
     }
-    update_score();    
+    newRecord = update_score();   
     enable_interrupts();
     move_win(7,0);
     SHOW_WIN;
@@ -233,7 +236,10 @@ void game_mode_level_complete_loop() {
     if (textScreenTimer != 0 && decimalTimer == 0) {
         textScreenTimer--;
         if (textScreenTimer == 1) {    
-            print_text_win(1, 15, press_any_button_text);                    
+            print_text_win(1, 16, press_any_button_text);   
+            if (newRecord == TRUE) {
+                print_text_win(4, 14, new_record_text); 
+            }                   
         } else if (textScreenTimer == 50) {    
             print_text_win(1, 4, bonus_text);       
             print_current_score(13);
@@ -261,7 +267,12 @@ void game_mode_level_complete_loop() {
             print_number_win(8, 11, difficultyBonus);
             currentScore += difficultyBonus;            
             print_current_score(13);
-            play_reload_sound();            
+            play_reload_sound();
+            if (currentLevel == 14) {
+                newRecord = update_score();
+            } else {
+                newRecord = FALSE;
+            }
         }
     } else if (joypad() && textScreenTimer == 0) {
         gameMode = previousGameMode;
@@ -288,6 +299,7 @@ void load_level_complete() {
         performant_delay(4);
     }
     if (isPracticeMode == FALSE) {
+
         UINT8 bank =_current_bank;
         SWITCH_ROM_MBC1(2);
         gb_decompress_bkg_data(205, borderTiles);
@@ -537,7 +549,7 @@ void game_mode_credits_loop() {
             } else if (credits_text[creditsTextIndex] == '!') {
                 set_bkg_tile_xy(creditsTextCursor, creditsLine, 0xF3); 
             } else if (credits_text[creditsTextIndex] == '\0') {                
-                print_text_bkg(1, 15, press_any_button_text);
+                print_text_bkg(1, 16, press_any_button_text);
                 showingPressAnyKey = TRUE;
             }
             creditsTextCursor++;

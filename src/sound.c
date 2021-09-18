@@ -121,6 +121,19 @@ void play_shoot_sound() {
     channel1Timer = 10;    
 }
 
+void play_last_bullet_shoot_sound() {   
+    UINT8 bank = _current_bank;
+    SWITCH_ROM_MBC1(3);
+    hUGE_mute_channel(HT_CH1, HT_CH_MUTE);  
+    SWITCH_ROM_MBC1(bank);  
+    NR10_REG = 0x5E;
+    NR11_REG = 0xC2;
+    NR12_REG = 0xB3;
+    NR13_REG = 0x66;
+    NR14_REG = 0x85;
+    channel1Timer = 10;    
+}
+
 void play_almost_exploding_sound() {
     UINT8 bank = _current_bank;
     SWITCH_ROM_MBC1(3);

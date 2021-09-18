@@ -44,6 +44,8 @@ extern const unsigned char round_text[];
 extern const unsigned char rounds_text[];
 extern const unsigned char enemy_text[];
 extern const unsigned char you_text[];
+extern const unsigned char you_win_text[];
+extern const unsigned char you_lose_text[];
 
 extern const unsigned char lives_text[];
 extern const unsigned char start_text[];
@@ -72,5 +74,6 @@ extern const unsigned char credits_text_9[];
 extern const unsigned char credits_text_10[];
 extern const unsigned char * credits_texts[];
 extern const unsigned char credits_text[];
+extern const unsigned char new_record_text[];
 
 #endif

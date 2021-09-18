@@ -228,6 +228,8 @@ void print_text_win(UINT8 x, UINT8 y, unsigned char text[]) {
             set_win_tile_xy(i+x, y, text[i] + 149);                     
         } else if (text[i] == ':') {
             set_win_tile_xy(i+x, y, 0xF2);
+        } else if (text[i] == '!') {
+            set_win_tile_xy(i+x, y, 0xF3);
         }
         i++;
     }
