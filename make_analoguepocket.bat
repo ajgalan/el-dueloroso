@@ -1,6 +1,7 @@
 @set GBDK=d:\GBDev\gbdk
 
 @if not exist build mkdir build
+@if not exist build\ap mkdir build\ap
 @if not exist obj mkdir obj
 @if not exist obj\sprites mkdir obj\sprites
 @if not exist obj\tiles mkdir obj\tiles
@@ -48,7 +49,8 @@
 %GBDK%\bin\lcc -Wa-l -Wl-m -Wf--debug -Wl-y -Wl-j -Wf-bo3 -c -o obj/sound/titleSong.o src/sound/titleSong.c
 %GBDK%\bin\lcc -Wa-l -Wl-m -Wf--debug -Wl-y -Wl-j -Wf-ba0 -c -o obj/saveData.o src/saveData.c
 
-%GBDK%\bin\lcc -Wa-l -Wl-m -Wf--debug -Wl-y -Wl-j -DUSE_SFR_FOR_REG -Wm-yn"ELDUELOROSO" -Wm-yj -Wl-yt3 -Wl-yo4 -Wl-ya1 -o build/ElDueloroso.gb ^
+%GBDK%\bin\lcc -Wa-l -Wl-m -Wf--debug -Wl-y -Wl-j -DUSE_SFR_FOR_REG -Wm-yn"ELDUELOROSO" -Wm-yj -Wl-yt3 -Wl-yo4 -Wl-ya1 ^
+-mgbz80:ap -o build/ap/ElDueloroso.pocket ^
 obj/main.o obj/utils.o obj/sound.o obj/levels.o obj/title.o obj/duel.o obj/shooting.o obj/riding.o obj/text.o ^
 obj/duel_banked.o obj/shooting_banked.o obj/riding_banked.o ^
 obj/sprites/ridingSprites.o obj/sprites/mainMenuSprites.o obj/sprites/shootingSprites.o obj/sprites/duelCharactersSprites.o ^
@@ -60,6 +62,6 @@ libs/huGEDriver.obj.o obj/sound/titleSong.o obj/sound/shootingSong.o obj/sound/r
 obj/saveData.o
 
 @echo.
-@if exist build/ElDueloroso.gb echo Build finished! The game is on build/ElDueloroso.gb
-@if not exist build/ElDueloroso.gb echo Build failed! Please make sure you have set the path to gbdk-4.0.4 on line 1
+@if exist build/ap/ElDueloroso.pocket echo Build finished! The game is on build/ap/ElDueloroso.pocket
+@if not exist build/ap/ElDueloroso.pocket echo Build failed! Please make sure you have set the path to gbdk-4.0.5 on line 1
 pause

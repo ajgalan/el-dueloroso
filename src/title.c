@@ -1,5 +1,5 @@
 #include <gb/gb.h>
-#include <gb/gbdecompress.h>
+#include <gbdk/gbdecompress.h>
 #include "utils.h"
 #include "text.h"
 #include "sound.h"

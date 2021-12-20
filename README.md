@@ -1,6 +1,6 @@
 # El Dueloroso
 
-**El Dueloroso** is a western-themed arcade game for the Nintendo Game Boy.  
+**El Dueloroso** is a western-themed arcade game for the Nintendo Game Boy and Analogue Pocket.  
 Submitted as a [Game Boy Competition 2021](https://itch.io/jam/gbcompo21) entry.  
 Download the latest version [here](https://github.com/ajgalan/el-dueloroso/releases/latest).
 
@@ -10,7 +10,8 @@ Download the latest version [here](https://github.com/ajgalan/el-dueloroso/relea
 
 - [Features](#features)
 - [Screenshots](#screenshots)
-- [Build instructions](#build-instructions)
+- [Build instructions for Game Boy](#build-instructions-for-game-boy)
+- [Build instructions for Analogue Pocket](#build-instructions-for-analogue-pocket)
 - [Licenses](#licenses)
 - [Credits](#credits)
 - [Links](#links)
@@ -30,12 +31,18 @@ Download the latest version [here](https://github.com/ajgalan/el-dueloroso/relea
 ![El Dueloroso Screenshot 2](assets/screenshot2.png)
 ![El Dueloroso Screenshot 3](assets/screenshot3.png)
 ![El Dueloroso Screenshot 4](assets/screenshot4.png)
-## Build instructions
 
-1. Download [GBDK 2020 v4.0.4](https://github.com/gbdk-2020/gbdk-2020/releases/tag/4.0.4)
-2. Clone this repository and modify the first line of `make.bat` by defining the path to GBDK
-3. Run `make.bat`
-4. The compiled game will be located at `build/ElDueloroso.gb` 
+## Build instructions for Game Boy
+1. Download [GBDK 2020 v4.0.5](https://github.com/gbdk-2020/gbdk-2020/releases/tag/4.0.5)
+2. Clone this repository and modify the first line of `make_gameboy.bat` by defining the path to GBDK
+3. Run `make_gameboy.bat`
+4. The compiled game will be located at `build/gb/ElDueloroso.gb` 
+
+## Build instructions for Analogue Pocket
+1. Download [GBDK 2020 v4.0.5](https://github.com/gbdk-2020/gbdk-2020/releases/tag/4.0.5)
+2. Clone this repository and modify the first line of `make_analoguepocket.bat` by defining the path to GBDK
+3. Run `make_analoguepocket.bat`
+4. The compiled game will be located at `build/ap/ElDueloroso.pocket` 
 
 ## Licenses
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
