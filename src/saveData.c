@@ -1,4 +1,4 @@
-#include <gb/gb.h>
+#include <gbdk/platform.h>
 
 BOOLEAN isSaveDataInitialized;
 UINT16 easyScore;

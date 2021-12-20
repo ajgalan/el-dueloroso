@@ -1,4 +1,4 @@
-#include <gb/gb.h>
+ #include <gbdk/platform.h>
 #include <gbdk/gbdecompress.h>
 #include "utils.h"
 #include "text.h"
@@ -75,12 +75,12 @@ void load_game_mode_title() {
     move_sprite(11, 88, 104);
     move_sprite(12, 96, 104);
     load_press_start();
-    STAT_REG = 0x45;
+    STAT_REG = STATF_LYC | STATF_LYCF | STATF_VBL;
     LYC_REG = 0x00;
     windowYPosition = 144;    
     add_LCD(interrupt_LCD_title);
     enable_interrupts();
-    set_interrupts(VBL_IFLAG | LCD_IFLAG);
+    set_interrupts(VBL_IFLAG | LCD_IFLAG);    
     SHOW_BKG;
     SHOW_SPRITES;
     DISPLAY_ON;    
@@ -136,7 +136,7 @@ void interrupt_LCD_title() {
             move_bkg(backgroundOffset4x,0);
             LYC_REG = 0x00;
             break;            
-    }   
+    } 
 }
 
 void load_press_start() {

@@ -1,4 +1,4 @@
-#include <gb/gb.h>
+#include <gbdk/platform.h>
 #include <gbdk/gbdecompress.h>
 #include "levels.h"
 #include "sound.h"

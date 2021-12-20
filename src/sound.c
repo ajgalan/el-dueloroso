@@ -1,4 +1,4 @@
-#include <gb/gb.h>
+#include <gbdk/platform.h>
 #include "sound/hUGEDriver.h"
 
 extern const hUGESong_t titleSong;

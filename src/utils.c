@@ -1,5 +1,4 @@
-#include <gb/gb.h>
-#include <gb/cgb.h>
+#include <gbdk/platform.h>
 #include <rand.h>
 #include <time.h>
 #include "utils.h"
